@@ -29,7 +29,7 @@ This project was built for the Zamp AI Solutions Associate case study. It focuse
 
 - Python 3.11
 - Streamlit for the UI
-- FastAPI for the optional API server
+- FastAPI for optional local/API usage
 - SQLite for run history, audit events, inbox state, workflow state, and payment runs
 - Pydantic for typed schemas
 - PyMuPDF for PDF inspection, text extraction, and preview rendering
@@ -352,65 +352,54 @@ Before pushing, confirm `.env` is not staged:
 git status --short
 ```
 
-## Deployment
+## Streamlit Cloud Deployment
 
-### Recommended deployment for the full Streamlit UI
-
-The main user interface is a Streamlit app (`app.py`). Vercel does not natively run Streamlit applications as long-running web apps. For the full demo UI, use one of these:
-
-- Streamlit Community Cloud
-- Render
-- Railway
-- Hugging Face Spaces
-
-For Streamlit Cloud, point the app to:
+This project is intended to be deployed as a Streamlit app. The main entrypoint is:
 
 ```text
 app.py
 ```
 
-Add this secret in the hosting provider:
+Deploy from GitHub using:
 
 ```text
-GEMINI_API_KEY=your_api_key_here
-GEMINI_MODEL=gemini-3-flash-preview
+Repository: ayushzz6/INVOICE_AP_AUTOMATION
+Branch: main
+Main file path: app.py
 ```
 
-### Vercel deployment
+Add these values in **Streamlit Cloud > App > Settings > Secrets**:
 
-This repo includes `vercel.json` and `vercel_app/index.py` so the FastAPI API can be deployed on Vercel.
+```toml
+GEMINI_API_KEY = "your_api_key_here"
+GEMINI_MODEL = "gemini-3-flash-preview"
+```
 
-Vercel will expose endpoints such as:
+Do not commit the real Gemini key to GitHub. Local keys should stay in `.env`; deployed keys should be stored only in Streamlit Cloud secrets.
+
+### Deployment Database
+
+The deployed app uses SQLite by default:
 
 ```text
-/health
-/process
-/history
-/invoice/{run_id}
-/pos
-/vendors
+data/zamp_ap.db
 ```
 
-Set these Vercel environment variables:
+Streamlit Cloud storage is suitable for a demo but should not be treated as a durable production database. The database can reset when the app restarts, redeploys, or the runtime is recycled. For this case-study demo, that is acceptable because the app can regenerate sample invoices and reseed demo history.
 
-```text
-GEMINI_API_KEY=your_api_key_here
-GEMINI_MODEL=gemini-3-flash-preview
-ZAMP_DB_PATH=/tmp/zamp_ap.db
-```
-
-Important Vercel limitation: `/tmp` storage is ephemeral. That is acceptable for a lightweight API demo, but not for persistent production history. For persistent deployment, replace SQLite with a hosted database such as Supabase Postgres, Neon, or Railway Postgres.
-
-Deploy with Vercel CLI:
+To clear local run history:
 
 ```powershell
-npm install -g vercel
-vercel login
-vercel
-vercel --prod
+Remove-Item data\zamp_ap.db -ErrorAction SilentlyContinue
 ```
 
-Or connect the GitHub repo in the Vercel dashboard and deploy from `main`.
+To clear local uploaded invoice copies as well:
+
+```powershell
+Remove-Item data\uploads -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item data\inbox -Recurse -Force -ErrorAction SilentlyContinue
+Remove-Item data\zamp_ap.db -ErrorAction SilentlyContinue
+```
 
 ## Troubleshooting
 
