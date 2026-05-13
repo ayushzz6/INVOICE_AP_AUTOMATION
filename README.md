@@ -2,7 +2,7 @@
 
 An AI-powered Accounts Payable workflow that takes vendor invoice PDFs and produces an explainable payment decision: `APPROVED`, `FLAGGED`, or `REJECTED`.
 
-This project was built for the Zamp AI Solutions Associate case study. It focuses on the AP problem statement: companies receive hundreds of invoice PDFs by email, manually match them to purchase orders, check vendor and payment details, and decide whether the invoice can be paid. The goal is to make that process run live, handle realistic edge cases, and show every step between input and decision.
+It focuses on the AP problem statement: companies receive hundreds of invoice PDFs by email, manually match them to purchase orders, check vendor and payment details, and decide whether the invoice can be paid. The goal is to make that process run live, handle realistic edge cases, and show every step between input and decision.
 
 ## Highlights
 
