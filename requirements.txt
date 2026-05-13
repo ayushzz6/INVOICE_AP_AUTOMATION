@@ -1,0 +1,12 @@
+fastapi
+uvicorn[standard]
+streamlit
+pydantic
+pandas
+python-multipart
+requests
+PyMuPDF
+rapidfuzz
+google-genai
+reportlab
+pytest

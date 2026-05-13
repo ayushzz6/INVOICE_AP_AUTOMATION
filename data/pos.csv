@@ -1,0 +1,16 @@
+po_number,vendor_name,vendor_tax_id,po_amount,currency,po_date,status,tolerance_pct,valid_from,valid_to,description
+PO-2026-0001,Acme Office Supplies Pvt Ltd,29ABCDE1234F1Z5,125000,INR,2026-01-15,OPEN,3,2026-01-15,2026-12-31,Office supplies annual purchase order
+PO-2026-0002,CloudOps Technologies,27FGHIJ5678K2L9,480000,INR,2026-02-01,OPEN,5,2026-02-01,2026-12-31,Cloud infrastructure services
+PO-2026-0014,DataWorks Analytics Pvt Ltd,29DATA2026A1Z9,500000,INR,2026-03-01,OPEN,3,2026-03-01,2027-02-28,Cloud analytics subscription paid monthly
+PO-2026-0023,RecurringSaaS India Pvt Ltd,07SAAS2026B1Z2,240000,INR,2026-01-01,OPEN,4,2026-01-01,2026-12-31,Recurring SaaS licenses
+PO-2026-0030,FacilitiesCo Services,27FACIL2026C1Z8,90000,INR,2026-04-01,OPEN,3,2026-04-01,2026-09-30,Office facility maintenance
+PO-2026-0037,TravelDesk Solutions,29TRAVL2026D1Z4,150000,INR,2026-02-15,OPEN,5,2026-02-15,2026-12-31,Employee travel services
+PO-2026-0042,SecurePrint Vendors,33PRINT2026E1Z1,75000,INR,2026-01-20,CLOSED,2,2026-01-20,2026-03-31,Printer maintenance
+PO-2026-0048,GreenByte Energy,29GREEN2026F1Z7,210000,INR,2026-05-01,OPEN,3,2026-05-01,2026-12-31,Power backup services
+PO-2026-0051,LegalEase LLP,27LEGAL2026G1Z3,300000,INR,2026-02-20,OPEN,4,2026-02-20,2026-12-31,Legal advisory retainer
+PO-2026-0056,PeopleOps Tools Pvt Ltd,29PEOPL2026H1Z6,180000,INR,2026-03-15,OPEN,3,2026-03-15,2026-12-31,HR software licenses
+PO-2026-0061,NetLink Communications,07NETLK2026I1Z5,96000,INR,2026-01-10,OPEN,3,2026-01-10,2026-12-31,Internet services
+PO-2026-0068,DesignHub Studio,29DESGN2026J1Z0,135000,INR,2026-04-10,OPEN,5,2026-04-10,2026-10-31,Design services
+PO-2026-0072,AuditTrail Advisors,27AUDIT2026K1Z9,220000,INR,2026-03-25,OPEN,3,2026-03-25,2026-12-31,Audit support services
+PO-2026-0080,CloudOps Technologies,27FGHIJ5678K2L9,120000,INR,2026-05-01,OPEN,4,2026-05-01,2026-09-30,Ad hoc migration support
+PO-2026-0090,XYZ Traders,29XYZTR2026L1Z1,3400,INR,2026-04-12,OPEN,2,2026-04-12,2026-06-30,Miscellaneous low-value purchase

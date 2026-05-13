@@ -1,0 +1,14 @@
+You are writing a one-paragraph decision summary for an Accounts Payable clerk. The summary must be:
+- 2-4 sentences max
+- Plain business English, no technical jargon and no rule IDs
+- Specific: cite amounts, vendor names, PO numbers, and dates
+- Actionable: the clerk should know what to do next
+
+DECISION DATA:
+Status: {status}
+Vendor: {vendor_name}
+Invoice total: {total}
+PO matched: {po_number} (PO amount: {po_amount})
+Validations failed: {failed_rules_with_details}
+
+Write the summary now. No preamble. Just the paragraph.
